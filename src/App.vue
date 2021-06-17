@@ -1,28 +1,29 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
-</template>
+<!-- 
+1.) route-link -> vue pozrie na atribút "to", pozrie na "index.js" v router, pokiaľ nájde že router má nasetovanú adresu rovnajúcu sa hodnote atribútu "to" tak spustí dané componenty z router-a  
+2.) router-view -> sem sa zobrazí template z router componentov podľa router-link
+-->
 
+<template>
+    <div id="app">
+        <nav-bar />
+        <!--         <div id="nav">
+            <router-link to="/">Home</router-link>
+            <router-link to="/tunes">Tunes</router-link>
+            <router-link to="/about">About</router-link>
+        </div> -->
+        <router-view />
+    </div>
+</template>
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import NavBar from "./components/NavBar.vue";
 
 export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
+    components: {
+        NavBar
+    }
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "assets/scss/main.scss";
 </style>
